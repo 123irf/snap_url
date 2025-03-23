@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enhanced Website</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 15px 30px;
+            z-index: 1000;
+        }
+
+        nav img {
+            height: 60px;
+        }
+
+        ul {
+            display: flex;
+            list-style: none;
+            gap: 20px;
+        }
+
+        li a {
+            text-decoration: none;
+            color: white;
+            font-weight: 500;
+            font-size: 1.1rem;
+            padding: 10px 20px;
+            border-radius: 8px;
+            transition: background 0.3s ease;
+        }
+
+        li a:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        section {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            color:#fff;
+            align-items: center;
+            flex-direction: column;
+            padding: 50px 20px;
+            text-align: center;
+        }
+
+        section:nth-child(2) {
+            background: #fff;
+        }
+
+        section:nth-child(3) {
+            background: #34b7a3;
+            color: white;
+        }
+
+        h2 {
+            font-size: 2.8rem;
+            margin-bottom: 30px;
+        }
+
+        p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        .reveal {
+            transform: translateY(150px);
+            opacity: 0;
+            transition: all 0.8s ease-in-out;
+        }
+
+        .reveal.active {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        form {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(20px);
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            max-width: 450px;
+            width: 100%;
+        }
+
+        label {
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+            display:block;
+            color:midnightblue;
+        }
+
+        input {
+            padding: 12px;
+            font-size: 1rem;
+            width: 100%;
+            border: none;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            background: rgba(255, 255, 255, 0.8);
+            color: #333;
+        }
+
+        button {
+            padding: 12px 12px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: white;
+            background-color: chocolate;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color:coral;
+        }
+
+        .message {
+            background-color: #2bcc91;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+            color: white;
+            font-weight: 500;
+        }
+
+        #home {
+            background: url('/images/image2.jpg') no-repeat center center/cover;
+        }
+        #about{
+            background: url('/images/image2.jpg') no-repeat center center/cover;
+        }
+        #contact{
+            background-color: #333;
+            color: #fff;
+        }
+        #btu{
+            background: url('/images/image2.jpg') no-repeat center center/cover;
+        }
+         #get{
+            background-color: blue;
+            padding: 10px;
+            border-radius: 10px;
+
+         }
+        section:not(:first-child) {
+            padding-top: 80px;
+        }
+        .fa-square-twitter{
+           font-size: 50px;
+           color:cadetblue;
+        }
+        .fa-facebook-f{
+            font-size:50px;
+            color:cadetblue;
+        }
+        .fa-linkedin{
+            font-size: 50px;
+            color:cadetblue;
+        }
+        .fa-instagram{
+            font-size: 50px;
+            color:cadetblue;
+        }
+        i{
+            padding: 30px;
+        }
+        a{
+           text-decoration: none;
+           color:#f4f4f4;
+        }
+        h4{
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        h1,h2,h3{
+            color:chocolate;
+        }
+        h1 {
+    font-family: Algerian;
+    font-size: 30px;
+    text-align: center;
+    gap: 6px;
+    letter-spacing:1cap;
+    text-shadow: 3px 3px 5px hsla(38, 61%, 37%, 0.5); 
+   }
+   section .boxs{
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+   }
+   section .boxs #box{
+    background: rgba(255, 255, 255, 0.15);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    color: #fff;
+    border:2px solid black;
+    border-radius: 40px;
+    margin: 20px;
+    padding: 20px;
+     min-height: 30vh;
+    width:20%;
+   }
+   .home{
+    width: 50%;
+    font-size:20px;
+   }
+    </style>
+</head>
+<body>
+    <nav>
+        <img src="logo3.png" alt="Logo" height="100px" width="100px">
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#contact">Contact Us</a></li>
+            <a href="#btu"><butten id="get">get link</button></a>
+        </ul>
+    </nav>
+    <section id="home">
+        <h1>WELOCOME TO SNAPURL</h1>
+       <div class="home">Use our URL shortener, QR Codes, and landing pages to engage your audience and connect them to the right information. Build, edit, and track everything inside the Bitly Connections Platform</div>
+       <% if(locals.id) { %>
+        <p style="color: #fff;">shortURL is:<%=id%></p>
+    <% } %>
+    <% if (locals.error) { %>
+        <p style="color: red; font-weight: bold;"><%= error %></p>
+    <% } %>
+    </section>
+    <section id="btu">
+        <form method="post" action="/url" class="reveal">
+            <label for="url">Shorten a long link</label>
+            <h4>No credit card required</h4>
+            <input type="text" id="url" name="url" placeholder="http://example.com" required>
+            <button type="submit">Get shortlink<i class="fa-solid fa-link"></i></button>
+        </form>
+    </section>
+    <!-- About Us Section -->
+    <section id="about">
+        <h2>About Us</h2>
+        <div class="boxs">
+        <div id="box"class="reveal">
+            <h3>Retail</h3>
+             <p>Attrack Customers and Keep loyal shopper come back</p>
+        </div>
+        <div id="box"class="reveal">
+            <h3>Consumer packaged goods</h3>
+            <p>Thriving brands start with raving fans and powerful connections</p>
+        </div>
+        <div id="box" class="reveal">
+            <h3>Hospitality</h3>
+            <p>Delight your guests and anticipate their every need with easy-to-use digital solution</p>
+        </div>
+        </div>
+    </section>
+
+    <!-- Contact Us Section -->
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <div class="reveal">
+            <i class="fa-brands fa-square-twitter"></i><i class="fa-brands fa-facebook-f"></i><i class="fa-brands fa-linkedin"></i><i class="fa-brands fa-instagram"></i>
+            <p id="cn">tiwtter&nbsp;&nbsp;&nbsp;&nbsp;facebook&nbsp;&nbsp;&nbsp;&nbsp;linkedin&nbsp;&nbsp;&nbsp;&nbsp;instagram</p>
+        </div>
+    </section>
+
+    <!-- JavaScript for scroll animations -->
+    <script>
+        window.addEventListener('scroll', reveal);
+
+        function reveal() {
+            const reveals = document.querySelectorAll('.reveal');
+            for (let i = 0; i < reveals.length; i++) {
+                const windowHeight = window.innerHeight;
+                const revealTop = reveals[i].getBoundingClientRect().top;
+                const revealPoint = 150;
+
+                if (revealTop < windowHeight - revealPoint) {
+                    reveals[i].classList.add('active');
+                } else {
+                    reveals[i].classList.remove('active');
+                }
+            }
+        }
+    </script>
+</body>
+</html>
