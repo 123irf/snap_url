@@ -30,7 +30,7 @@ app.get('/:shortid', async (req, res) => {
 });
 
 mongodbConnection(process.env.MONGO_URL);
-//this my fist hosting
+//this my fist
 
 app.listen(port, '0.0.0.0', () => {
     console.log(`🚀 Server running at ${baseUrl}`);
