@@ -6,7 +6,7 @@ const app = express();
 const urlRouter = require('./routes/url');
 const staticRouter = require('./routes/staticRouter');
 const URL = require('./models/url');
-const port = process.env.PORT || 8001;
+const port = process.env.PORT || 10000;
 const baseUrl = process.env.BASE_URL || `http://localhost:${port}`;
 app.set('view engine', 'ejs');
 app.set('views', path.resolve('./views'));
@@ -14,7 +14,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public')));
 app.use('/url', urlRouter);
-app.use('/SnapURL', staticRouter);
+app.use('/', staticRouter);
 app.get('/:shortid', async (req, res) => {
     try {
         const { shortid } = req.params;
